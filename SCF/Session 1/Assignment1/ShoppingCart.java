@@ -82,6 +82,7 @@ public class ShoppingCart {
 						
 						if(cart.isItemInStore(item)){
 							cart.addItemInCart(item, incQuantity);
+							cart.displayCart();
 						}
 						else{
 							System.out.println("Please Enter the item name correctly!");
@@ -91,6 +92,7 @@ public class ShoppingCart {
 					case 3:
 						String tempItem;
 						int decQuantity;
+						cart.displayCart();
 						System.out.println("Enter the name of the item!");
 						tempItem=input.nextLine();
 						System.out.println("enter quantity of item you want to remove");
@@ -98,6 +100,7 @@ public class ShoppingCart {
 						input.nextLine();
 						if(cart.isItemInCart(tempItem)){
 							cart.removeItemFromCart(tempItem, decQuantity);
+							cart.displayCart();
 						}
 						else{
 							System.out.println("Please Enter the item name correctly!");
