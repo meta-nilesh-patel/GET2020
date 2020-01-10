@@ -177,7 +177,7 @@ public class ShoppingCart {
 	 */
 	public void addItemInCart(String item, int incQuantity){
 		this.cart.add(items.get(item));
-		items.get(item).IncQuantity(incQuantity);
+		items.get(item).incQuantity(incQuantity);
 	}
 	
 	
@@ -188,10 +188,10 @@ public class ShoppingCart {
 	public void removeItemFromCart(String item, int decQuantity){
 		if(items.get(item).getQuantity()<=decQuantity){
 		this.cart.remove(items.get(item));
-		items.get(item).DecQuantity(items.get(item).getQuantity());
+		items.get(item).decQuantity(items.get(item).getQuantity());
 		}
 		else{
-			items.get(item).DecQuantity(decQuantity);
+			items.get(item).decQuantity(decQuantity);
 		}
 		
 	}
