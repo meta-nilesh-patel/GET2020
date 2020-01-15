@@ -1,6 +1,7 @@
 import java.util.*;
 
-public class ShoppingCart {
+public class ShoppingCart 
+{
 	//cart store all the item which user will buy!
 	Set<Item> cart=new HashSet<Item>();
 	
@@ -38,7 +39,8 @@ public class ShoppingCart {
 	}
 	
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) 
+	{
 			
 			//creating a scanner object for taking inputs!
 		 	Scanner input = new Scanner(System.in);
@@ -47,8 +49,7 @@ public class ShoppingCart {
 		 	ShoppingCart cart = new ShoppingCart();
 			
 			//display available items with their price!
-			System.out.println("Available Items!");
-			System.out.println("Name \t\t price ");
+			System.out.println("Available Items! \nName \t\t price");
 			
 			for (Map.Entry<String, Item> entry : items.entrySet()){  
 	            System.out.println(entry.getKey() + " \t\t " + entry.getValue().getPrice()); 
@@ -56,17 +57,22 @@ public class ShoppingCart {
 			
 			int choice;// taking choice from user!
 			
-			do{
+			do
+			{
 				System.out.println("Choose your Choice!");				
 				System.out.println("Enter 1 for Display items of Cart!");
 				System.out.println("Enter 2 for Add an item from Cart");
 				System.out.println("Enter 3 for Remove an item in cart!");
 				System.out.println("Enter 4 for when you are done and want to Generate bill!");
+				System.out.println("Enter 5 for Exit.");
 				
 				choice = input.nextInt();
-				input.nextLine();//consume the \n character which left by nextInt!
+				//consume the \n character which left by nextInt!
+				input.nextLine();
 				
-				switch(choice){
+				
+				switch(choice)
+				{
 					case 1:
 						cart.displayCart();
 						break;
@@ -80,11 +86,13 @@ public class ShoppingCart {
 						incQuantity = input.nextInt();
 						input.nextLine();
 						
-						if(cart.isItemInStore(item)){
+						if(cart.isItemInStore(item))
+						{
 							cart.addItemInCart(item, incQuantity);
 							cart.displayCart();
 						}
-						else{
+						else
+						{
 							System.out.println("Please Enter the item name correctly!");
 						}
 						break;
@@ -98,11 +106,13 @@ public class ShoppingCart {
 						System.out.println("enter quantity of item you want to remove");
 						decQuantity = input.nextInt();
 						input.nextLine();
-						if(cart.isItemInCart(tempItem)){
+						if(cart.isItemInCart(tempItem))
+						{
 							cart.removeItemFromCart(tempItem, decQuantity);
 							cart.displayCart();
 						}
-						else{
+						else
+						{
 							System.out.println("Please Enter the item name correctly!");
 						}
 						break;
@@ -119,26 +129,29 @@ public class ShoppingCart {
 					
 			}while(choice != 4);
 			
-			input.close();
-			
 	}
 	
 	
-	/* search an item in store.
+	/**
+	 * search an item in store.
 	 * @param item : item to be searched.
 	 * @return : true if item found in list else false.
 	 */
-	public boolean isItemInStore(String item){
-		for (Map.Entry<String, Item> entry : items.entrySet()){
-            if(entry.getValue().getName().equals(item)){
-            	return true;
-            }; 
-        }
-		return false;		 
+	public boolean isItemInStore(String item)
+	{
+	    for (Map.Entry<String, Item> entry : items.entrySet())
+	    {
+            	if(entry.getValue().getName().equals(item))
+		{
+            		return true;
+            	}; 
+            }
+	    return false;		 
 	}
 	
 	
-	/* search an item in users cart.
+	/** 
+	 * search an item in users cart.
 	 * @param item : item to be searched.
 	 * @return : true if item found in list else false.
 	 */
@@ -153,57 +166,71 @@ public class ShoppingCart {
 		return false;
 	}
 	
-	
-	//display all the Cart items!
-	public void displayCart(){
+	/**	
+	 * display all the Cart items!
+	 */
+	public void displayCart()
+	{
 		Iterator<Item> value = this.cart.iterator();
 		
-		if (value.hasNext() == false){
+		if (value.hasNext() == false)
+		{
 			System.out.println("Cart is Empty!");
 		}
-		else{
+		else
+		{
 			System.out.println("Name\tQuantity");		
-			while (value.hasNext()){
+			while (value.hasNext())
+			{
 		         Item tempItem = value.next();
 		         System.out.println(tempItem.getName()+"\t"+tempItem.getQuantity());
-		        }
-		}
+		 	}
+		 }	
 	}
 	
 	
-	/* add item in user's cart.
+	/** 
+	 * add item in user's cart.
 	 * @param item : item to be added.
 	 * @param incQuantity : quantity of item user want to add in Cart.
 	 */
-	public void addItemInCart(String item, int incQuantity){
+	public void addItemInCart(String item, int incQuantity)
+	{
 		this.cart.add(items.get(item));
 		items.get(item).incQuantity(incQuantity);
 	}
 	
 	
-	/*remove item from user's Cart.
+	/**
+	 * remove item from user's Cart.
 	 * @param item : item to be removed.
 	 * @param decQuantity : quantity of item user want to remove from Cart. 
 	 */
-	public void removeItemFromCart(String item, int decQuantity){
-		if(items.get(item).getQuantity()<=decQuantity){
-		this.cart.remove(items.get(item));
-		items.get(item).decQuantity(items.get(item).getQuantity());
+	public void removeItemFromCart(String item, int decQuantity)
+	{
+		if(items.get(item).getQuantity()<=decQuantity)
+		{
+			this.cart.remove(items.get(item));
+			items.get(item).decQuantity(items.get(item).getQuantity());
 		}
-		else{
+		else
+		{
 			items.get(item).decQuantity(decQuantity);
 		}
 		
 	}
 	
 	
-	/* generate the Cart bill!
+	/** 
+	 * generate the Cart bill!
 	 * @return totalAmount : total value of cart items.
 	 */
-	public double generateBill(){
+	public double generateBill()
+	{
 		double totalAmount=0.0;
 		Iterator<Item> value = this.cart.iterator();
-		while (value.hasNext()){
+		while (value.hasNext())
+		{
 			Item tempItem=value.next();
 			totalAmount += tempItem.getPrice() * tempItem.getQuantity();
 		}
