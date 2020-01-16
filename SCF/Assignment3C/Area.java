@@ -8,11 +8,12 @@ public class Area
 {
 	
 	/**
+	 *
 	 * Find area of right angle triangle
 	 * Assuming triangle is right angle triangle
-	 * Assuming height and width value will greater than zero
+	 * Assuming height and base value will greater than zero
 	 * @param height : represent height of a right angle triangle
-	 * @param base : represent width of a right angle triangle
+	 * @param base : represent base of a right angle triangle
 	 * @return area of triangle
 	 */
 	public double getAreaOfTriangle(double height, double base)
@@ -23,10 +24,10 @@ public class Area
 	
 	/**
 	 * Find area of rectangle
-	 * Assuming height and width value will greater than zero
+	 * Assuming height and  value will greater than zero
 	 * @param height : represent height of a rectangle
-	 * @param base : represent width of a rectangle
-	 * @return area of triangle
+	 * @param base : represent base of a rectangle
+	 * @return area of rectangle
 	 */
 	public double getAreaOfRectangle(double height, double base)
 	{
@@ -48,8 +49,8 @@ public class Area
 	
 	/**
 	 * Find area of square
-	 * Assuming height and width value will greater than zero
-	 * @param base : represent width of a square
+	 * Assuming base value will greater than zero
+	 * @param base : represent base of a square
 	 * @return area of a square
 	 */
 	public double getAreaOfSquare(double base)
