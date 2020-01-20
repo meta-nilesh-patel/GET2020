@@ -118,7 +118,8 @@ public class ArrOperation {
 		if(inputArray.length == 0)
 		{
 			throw new AssertionError("Null Array");
-		}else
+		}
+		else
 		{
 			//validating if array contain negative integer
 			boolean validInput = inputValidation(inputArray);
