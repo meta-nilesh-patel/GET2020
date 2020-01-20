@@ -403,7 +403,8 @@ public class HexCalc implements ArithmeticLogicalOperation
 	public boolean inputValidation(String operand)
 	{
 		//for HexaDecimal 
-		if(operand.matches("[0-9A-F]+")){
+		if(operand.matches("[0-9A-F]+"))
+		{
 			return true;
 		}
 		else
