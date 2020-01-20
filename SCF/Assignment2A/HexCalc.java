@@ -422,11 +422,11 @@ public class HexCalc implements ArithmeticLogicalOperation
 	 */
 	public String removeInitialZeros(String firstOperand)
 	{
-		/*	Loop extracts character at all Index numbers of the number and thus checks for the presence of zeros
-			if found then trims the string
-			leaves the number as it as when there is only one character in it and that too is 0
-			Raises the flag when all the zeros are ended to avoid further checking
-		*/
+		/**
+		 * Loop extracts character at all Index numbers of the number and thus checks for the presence of zeros
+		 *	if found then trims the stringleaves the number as it as when there is only one character in it 
+		 *	and that too is 0 Raises the flag when all the zeros are ended to avoid further checking
+		 */
 		String updatedOperand = new String();
 		for(int indexNumber = 0; indexNumber < firstOperand.length(); indexNumber++)
 		{
