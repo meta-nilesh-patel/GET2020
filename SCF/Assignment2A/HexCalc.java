@@ -131,7 +131,8 @@ public class HexCalc implements ArithmeticLogicalOperation
 			if(reminder>=10 && reminder<=15)
 			{
 				hexString.append(HexCalc.decToHexTable.get(reminder));
-			}else
+			}
+			else
 			{
 				hexString.append(reminder);
 			}
