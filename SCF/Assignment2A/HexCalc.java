@@ -1,5 +1,6 @@
 import java.io.IOException;
 import java.util.Scanner;
+import java.util.HashMap;
 
 /**
  * 
@@ -427,7 +428,7 @@ public class HexCalc implements ArithmeticLogicalOperation
 		 *	if found then trims the stringleaves the number as it as when there is only one character in it 
 		 *	and that too is 0 Raises the flag when all the zeros are ended to avoid further checking
 		 */
-		String updatedOperand = new String();
+		String updatedOperand = firstOperand;
 		for(int indexNumber = 0; indexNumber < firstOperand.length(); indexNumber++)
 		{
 			char ch1 = firstOperand.charAt(indexNumber);
