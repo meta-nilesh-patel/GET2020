@@ -79,7 +79,6 @@ public class HexCalc implements ArithmeticLogicalOperation
 			//if  @hexChar contain A-F than taking respective decimal from HashMap @hexToDecTable
 			if((int)hexChar >= asciiOfCharA && (int)hexChar <= asciiOfCharF)
 			{
-				
 				int decimalOfHex = HexCalc.hexToDecTable.get(hexChar).intValue();
 				decimal += decimalOfHex*(java.lang.Math.pow(base,power));
 				power++;
