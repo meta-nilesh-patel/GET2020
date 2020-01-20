@@ -1,7 +1,7 @@
 /**
+ *
  * @author Nilesh Patel
  * This class contain two methods binarySearch and linearSearch.
- *
  */
 public class Searching 
 {
