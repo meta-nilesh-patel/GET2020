@@ -72,8 +72,8 @@ public class TestHexCalc
 			    	   catch(IOException io)
 			    	   {
 			    		   System.out.println(io);			    	   
-			    	   break;
 			           }
+				   break;    
 			       }   
 			    	   
 			       case(2):
