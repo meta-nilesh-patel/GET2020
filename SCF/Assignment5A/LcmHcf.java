@@ -19,9 +19,10 @@ public class LcmHcf
 			throw new AssertionError("found invalid input!!, Both input should greater than 0.");
 		}
 		
+		int remainder;
 		if(firstNumber > secondNumber)
 		{
-			int remainder = firstNumber % secondNumber;
+			remainder = firstNumber % secondNumber;
 			if(remainder == 0)
 			{
 				return secondNumber;
@@ -33,7 +34,7 @@ public class LcmHcf
 		}
 		else
 		{
-			int remainder = secondNumber % firstNumber;
+			remainder = secondNumber % firstNumber;
 			if(remainder == 0)
 			{
 				return firstNumber;
