@@ -59,9 +59,8 @@ public class LcmHcf
 		//computing HCF for two number by calling getHCF method.
 		int hcf = this.getHCF(firstNumber, secondNumber);
 		
-		//applying formula (firstNumber * secondNumber = HCF * LCM)
-		int lcm = (firstNumber * secondNumber) / hcf;
-		return lcm;
+		//applying formula (firstNumber * secondNumber = HCF * LCM)           
+		return (firstNumber * secondNumber) / hcf;
 	}
 }
 
