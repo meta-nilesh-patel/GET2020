@@ -14,7 +14,6 @@ import org.junit.runners.Parameterized.Parameters;
  * @author Nilesh Patel
  * This class test multiplyPoly method of Poly class;
  */
-
 @RunWith(Parameterized.class)
 public class TestMultiPlyMethod
 {
@@ -55,7 +54,7 @@ public class TestMultiPlyMethod
 		{
 			Poly objectOfPolyClass1 = new Poly(inputArray1);
 			Poly objectOfPolyClass2 = new Poly(inputArray2);
-			int[] actualOutput = Poly.multiplyPoly(objectOfPolyClass1, objectOfPolyClass2).getPolynomial();
+			int[] actualOutput = Poly.multiplyPoly(objectOfPolyClass1, objectOfPolyClass2).getPolynomialArray();
 			assertArrayEquals(expectedOutput, actualOutput);
 		}
 		catch(IOException io)
@@ -70,7 +69,7 @@ public class TestMultiPlyMethod
 		{
 			Poly objectOfPolyClass1 = new Poly(new int[]{});
 			Poly objectOfPolyClass2 = new Poly(new int[]{4, 5, 6});
-			int[] actualOutput = Poly.multiplyPoly(objectOfPolyClass1, objectOfPolyClass2).getPolynomial();
+			int[] actualOutput = Poly.multiplyPoly(objectOfPolyClass1, objectOfPolyClass2).getPolynomialArray();
 		}
 		catch(IOException io)
 		{
