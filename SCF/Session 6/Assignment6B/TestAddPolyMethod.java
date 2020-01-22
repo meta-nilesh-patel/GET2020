@@ -55,7 +55,7 @@ public class TestAddPolyMethod
 		{
 			Poly objectOfPolyClass1 = new Poly(inputArray1);
 			Poly objectOfPolyClass2 = new Poly(inputArray2);
-			int[] actualOutput = Poly.addPoly(objectOfPolyClass1, objectOfPolyClass2).getPolynomial();
+			int[] actualOutput = Poly.addPoly(objectOfPolyClass1, objectOfPolyClass2).getPolynomialArray();
 			for (int index = 0; index < expectedOutput.length; index++)
 			{
 				assertEquals(expectedOutput[index], actualOutput[index]);
@@ -73,7 +73,7 @@ public class TestAddPolyMethod
 		{
 			Poly objectOfPolyClass1 = new Poly(new int[]{});
 			Poly objectOfPolyClass2 = new Poly(new int[]{4, 5, 6});
-			int[] actualOutput = Poly.addPoly(objectOfPolyClass1, objectOfPolyClass2).getPolynomial();
+			int[] actualOutput = Poly.addPoly(objectOfPolyClass1, objectOfPolyClass2).getPolynomialArray();
 		}
 		catch(IOException io)
 		{
