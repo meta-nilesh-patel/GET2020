@@ -1,4 +1,6 @@
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map.Entry;
 
 /**
  * 
@@ -7,7 +9,8 @@ import java.io.IOException;
  */	
 final class Poly
 {
-	private final int[] polynomial;
+	private final HashMap<Integer, Integer> polynomial = new HashMap<>();
+	private int degreeOfPolynomial;
 	
 	/**
 	 * 
@@ -22,19 +25,36 @@ final class Poly
 		{
 			throw new IOException("Null Polynomial Not Allowed");
 		}
-		this.polynomial = poly;
+		for (int indexOfPoly = 0; indexOfPoly < poly.length; indexOfPoly++)
+		{
+			if(poly[indexOfPoly] != 0)
+			{
+				this.polynomial.put(indexOfPoly, poly[indexOfPoly]);
+				this.degreeOfPolynomial = indexOfPoly;
+			}
+		}	
 	}
 	
 	/**
 	 * 
 	 * getter method for getting int array from polynomial
 	 * @return int array of polynomials.
-	 * @throws IOException if the polynomial is null.
 	 */
-	public int[] getPolynomial() throws IOException 
+	public int[] getPolynomialArray() 
 	{	
-		Poly poly = new Poly(polynomial);
-		return poly.polynomial;
+		int[] polynomialArray = new int[this.degreeOfPolynomial + 1];
+		for (int exponent = 0; exponent < polynomialArray.length; exponent++)
+		{
+			if(this.polynomial.containsKey(exponent))
+			{
+				polynomialArray[exponent] = this.polynomial.get(exponent);
+			}
+			else
+			{
+				polynomialArray[exponent] = 0;
+			}
+		}
+		return polynomialArray;
 	}
 	
 	/**
@@ -46,9 +66,9 @@ final class Poly
 	public float evaluate(float valueOfVariable) 
 	{	
 		float solution = 0.0f;
-		for(int indexValue = polynomial.length - 1; indexValue >= 0; indexValue--) 
+		 for (Entry<Integer, Integer> entry : this.polynomial.entrySet())   
 		{
-			solution += (polynomial[indexValue] * Math.pow(valueOfVariable, indexValue));
+			solution += (entry.getValue() * Math.pow(valueOfVariable, entry.getKey()));
 		}
 		return solution;
 	}
@@ -60,7 +80,7 @@ final class Poly
 	 */
 	public int degree() 
 	{
-		return (polynomial.length-1);
+		return this.degreeOfPolynomial;
 	}
 	
 	/**
@@ -73,23 +93,25 @@ final class Poly
 	 */
 	public static Poly addPoly(Poly poly1, Poly poly2) throws IOException
 	{	
-		if(poly2.polynomial.length > poly1.polynomial.length)
+		if(poly2.degreeOfPolynomial > poly1.degreeOfPolynomial)
 		{
 			Poly p3 = poly1;
 			poly1 = poly2;
 			poly2 = p3;
 		}
 		
-		int[] result = new int[Math.max(poly1.polynomial.length, poly2.polynomial.length)];
-		for(int index = 0; index < poly1.polynomial.length; index++)
+		int[] poly1Array = poly1.getPolynomialArray();
+		int[] poly2Array = poly2.getPolynomialArray();
+		int[] result = new int[poly1.degreeOfPolynomial + 1];
+		for(int index = 0; index < poly1.degreeOfPolynomial + 1; index++)
 		{
-			if(poly2.polynomial.length>index)
+			if((poly2.degreeOfPolynomial + 1)>index)
 			{
-				result[index] = poly1.polynomial[index] + poly2.polynomial[index];
+				result[index] = poly1Array[index] + poly2Array[index];
 			}
 			else
 			{
-				result[index] = poly1.polynomial[index];
+				result[index] = poly1Array[index];
 			}
 		}
 		return new Poly(result);
@@ -103,14 +125,16 @@ final class Poly
 	 * @return Poly type of product of polynomials
 	 * throws IOException if array of polynomial is null
 	 */
-	public static Poly multiplyPoly(Poly poly1, Poly poly2)throws IOException 
+	public static Poly multiplyPoly(Poly poly1, Poly poly2)throws IOException
 	{
-		int[] result = new int[poly1.polynomial.length + poly2.polynomial.length - 1];
-		for(int indexFirst = poly1.polynomial.length - 1; indexFirst >= 0; indexFirst--) 
+		int[] poly1Array = poly1.getPolynomialArray();
+		int[] poly2Array = poly2.getPolynomialArray();
+		int[] result = new int[poly1.degreeOfPolynomial + poly2.degreeOfPolynomial + 1];
+		for(int indexFirst = poly1.degreeOfPolynomial; indexFirst >= 0; indexFirst--) 
 		{
-			for(int indexSecond = poly2.polynomial.length - 1;indexSecond >= 0; indexSecond--) 
+			for(int indexSecond = poly2.degreeOfPolynomial; indexSecond >= 0; indexSecond--) 
 			{
-				result[indexFirst + indexSecond] += poly1.polynomial[indexFirst] * poly2.polynomial[indexSecond];		
+				result[indexFirst + indexSecond] += poly1Array[indexFirst] * poly2Array[indexSecond];		
 			}
 		}
 		return new Poly(result);
