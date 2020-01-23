@@ -8,7 +8,6 @@ import java.io.IOException;
 
 public interface ArithmeticLogicalOperation 
 {
-	
 	/**
 	 * 
 	 * @param firstOperand operand for addition
@@ -25,7 +24,7 @@ public interface ArithmeticLogicalOperation
 	 * @return result of subtraction of two operand
 	 * @throws IOException if parameter not contain legal value
 	 */
-	public String subtractOperation(String firstOperand , String secondOperand)throws IOException;
+	public String subtractOperation(String firstOperand , String secondOperand) throws IOException;
 	
 	/**
 	 * 
@@ -34,7 +33,7 @@ public interface ArithmeticLogicalOperation
 	 * @return result of multiplication of two operand
 	 * @throws IOException if parameter not contain legal value
 	 */
-	public String multiplicationOperation(String firstOperand , String secondOperand)throws IOException;
+	public String multiplicationOperation(String firstOperand , String secondOperand) throws IOException;
 	
 	/**
 	 * 
@@ -43,7 +42,7 @@ public interface ArithmeticLogicalOperation
 	 * @return result of division of two operand
 	 * @throws IOException if parameter not contain legal value
 	 */
-	public String divisonOperation(String firstOperand , String secondOperand)throws IOException,ArithmeticException;
+	public String divisonOperation(String firstOperand , String secondOperand) throws IOException, ArithmeticException;
 	
 	/**
 	 * 
