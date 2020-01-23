@@ -45,7 +45,7 @@ public class TestMethodGetLCM
 				{9, 9, 9},
 				{6, 8, 24},
 				{0, 7, "found invalid input!!, Both input should greater than 0."},
-				{1,-7,"found invalid input!!, Both input should greater than 0."}
+				{1, -7, "found invalid input!!, Both input should greater than 0."}
 			};
 		return Arrays.asList(data);
 	}
