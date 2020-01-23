@@ -45,7 +45,7 @@ public class TestGetHCfMethod
 				{7, 7, 7},
 				{7, 9, 1},
 				{0, 7, "found invalid input!!, Both input should greater than 0."},
-				{1,-7,"found invalid input!!, Both input should greater than 0."}
+				{1, -7, "found invalid input!!, Both input should greater than 0."}
 			};
 		return Arrays.asList(data);
 	}
