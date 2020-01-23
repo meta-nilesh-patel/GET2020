@@ -50,7 +50,6 @@ public class HexCalc implements ArithmeticLogicalOperation
 	 */
 	public long hexToDecimal(String operand) throws IOException
 	{
-		
 		//remove initial zeros 
 		operand = removeInitialZeros(operand);
 		
@@ -69,8 +68,7 @@ public class HexCalc implements ArithmeticLogicalOperation
 		int asciiOfCharF = 70;
 				
 		for(int charIndex = operand.length()-1; charIndex >=0; charIndex--)
-		{
-			
+		{	
 			//@hexChar store character from given index
 			char hexChar = operand.charAt(charIndex);
 			
