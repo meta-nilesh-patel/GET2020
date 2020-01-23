@@ -6,8 +6,8 @@ import java.util.List;
  * This Class implements methods to perform operation on positive integer array
  * @author Nilesh Patel
  */
-public class ArrOperation {
-
+public class ArrOperation 
+{
 	/**
 	 * 
 	 * Find size of largest mirror section in positive integer array
@@ -113,7 +113,6 @@ public class ArrOperation {
 	 */
 	public int getNumberOfClumpsInArray(int inputArray[]) throws AssertionError
 	{
-
 		//input validation
 		if(inputArray.length == 0)
 		{
@@ -166,7 +165,6 @@ public class ArrOperation {
 	 */
 	public int[] fixXYInArray(int inputArray[],int x, int y)throws AssertionError
 	{
-		
 		//input validation
 		if(inputArray.length == 0)
 		{ 
@@ -259,7 +257,6 @@ public class ArrOperation {
 	 */
 	public int getSplitIndexInArray(int inputArray[]) throws AssertionError
 	{
-		
 		//input validation
 		if(inputArray.length == 0)
 		{
@@ -284,7 +281,6 @@ public class ArrOperation {
 		int leftSideSum = 0;
 		int rightSideSum = arraySum;		
 		int arrayIndex = 0;
-		
 		while(leftSideSum < rightSideSum)
 		{	
 			leftSideSum += inputArray[arrayIndex];
@@ -309,7 +305,6 @@ public class ArrOperation {
 	 */
 	private boolean inputValidation(int inputArray[])
 	{
-
 			for(int arrayIndex =0; arrayIndex < inputArray.length; arrayIndex++)
 			{
 				if(inputArray[arrayIndex] < 0)
