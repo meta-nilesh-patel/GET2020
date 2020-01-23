@@ -18,7 +18,6 @@ public class TestHexCalc
 		
 		//for taking user input from keyboard
 		Scanner userInput = new Scanner(System.in);
-		
 		while(true)
 		{
 		       System.out.println("Please Select choice!");
@@ -35,7 +34,6 @@ public class TestHexCalc
 		
 		       //this variable store user choice
 		       int choice = userInput.nextInt();
-		       
 		       //this terminate program
 		       if(choice == 10)
 		       {
@@ -46,7 +44,6 @@ public class TestHexCalc
 		       //for calling respective methods
 		       switch(choice)
 		       {
-		       
 			       case(1):
 			       {
 			    	   System.out.print("Please Enter First HexaDecimal Number:");
@@ -55,8 +52,7 @@ public class TestHexCalc
 			    	   secondOperand = userInput.next().toUpperCase();
 			    	   
 			    	   try
-			    	   {
-			    		   
+			    	   {   
 			    		   /**
 			    		    * 
 				    	    * @addResult store addition of two hexaDecimal numbers
@@ -275,7 +271,6 @@ public class TestHexCalc
 			       
 			       case(8):
 			       {
-			    	   
 			    	   System.out.print("Please Enter HexaDecimal Number:");
 			    	   firstOperand =userInput.next().toUpperCase();
 			    	   
@@ -301,7 +296,6 @@ public class TestHexCalc
 			       }
 			       case(9):
 			       {
-			    	   
 			    	   System.out.print("Please Enter Decimal Number:");
 			    	   String decimal = userInput.next();
 			    	   
@@ -331,11 +325,7 @@ public class TestHexCalc
 			    	   System.out.println("Invalid Input!!!!");
 			    	   break;
 			       }
-			  };
-			      
-		}
-			     
+			  };	      
+		}		     
 	}
-	
-
 }
