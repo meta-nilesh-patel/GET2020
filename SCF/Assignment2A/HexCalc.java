@@ -12,19 +12,16 @@ import java.util.HashMap;
 public class HexCalc implements ArithmeticLogicalOperation 
 {
 	public static final int base = 16;
-	
 	/**
 	 * 
 	 * hexToDecTable store decimal representation of hexa decimal number (ex. A - 10)
 	 */
 	static HashMap<Character, Integer> hexToDecTable = new HashMap<Character, Integer>();
-	
 	/**
 	 * 
 	 * decToHexTable store hexadecimal representation of decimal number (ex. 10 - A)
 	 */
-	static HashMap<Integer, Character> decToHexTable = new HashMap<Integer, Character>();
-		
+	static HashMap<Integer, Character> decToHexTable = new HashMap<Integer, Character>();	
 	/**
 	 * 
 	 * to initialize hexTables
@@ -98,7 +95,7 @@ public class HexCalc implements ArithmeticLogicalOperation
 	 * @param operand will be convert to hexa decimal
 	 * @return hexa decimal representation of parameter
 	 */
-	public String decimalToHex(String operand)throws IOException
+	public String decimalToHex(String operand) throws IOException
 	{
 		//remove initial zeros 
 		operand = removeInitialZeros(operand);
@@ -151,7 +148,6 @@ public class HexCalc implements ArithmeticLogicalOperation
 	 */
 	public String addOperation(String firstOperand , String secondOperand) throws IOException
 	{
-		
 		/**
 		 * 
 		 * validating parameter
@@ -225,7 +221,6 @@ public class HexCalc implements ArithmeticLogicalOperation
 	 */
 	public String divisonOperation(String firstOperand , String secondOperand) throws ArithmeticException, IOException
 	{
-		
 		/**
 		 * 
 		 * validating parameter
@@ -277,7 +272,6 @@ public class HexCalc implements ArithmeticLogicalOperation
 		//first checking if length is equal
 		if(firstOperand.length() == secondOperand.length())
 		{
-			
 			//if length equal than comparing each character 
 			for(int charIndex = 0; charIndex < firstOperand.length(); charIndex++)
 			{
@@ -376,7 +370,6 @@ public class HexCalc implements ArithmeticLogicalOperation
 
 		if(firstOperand.length()==secondOperand.length())
 		{
-
 			//if length equal than comparing each character 
 			for(int charIndex = 0; charIndex < firstOperand.length(); charIndex++)
 			{
