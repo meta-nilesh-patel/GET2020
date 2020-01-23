@@ -13,7 +13,6 @@ import org.junit.runners.Parameterized.Parameters;
  * @author Nilesh Patel
  * This class test union method of IntSet class;
  */
-
 @RunWith(Parameterized.class)
 public class TestUnionMethod
 {
