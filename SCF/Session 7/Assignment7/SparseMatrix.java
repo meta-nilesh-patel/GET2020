@@ -159,8 +159,17 @@ final class SparseMatrix
 		}
 		int[][] multiplicationMatrix = new int[firstMatrix.totalRow][secondMatrix.totalColumn];
 		int[][] firstSparseMatrix = SparseMatrix.sortSparseMatrixByRowColumn(firstMatrix.sparseMatrix);
-		int[][] secondSparseMatrix = SparseMatrix.sortSparseMatrixByRowColumn(secondMatrix.getTranspose().sparseMatrix);
-	
+		int[][] transposeOfsecondSparseMatrix = SparseMatrix.sortSparseMatrixByRowColumn(secondMatrix.getTranspose().sparseMatrix);
+		for(int indexOfFirstSparse = 0; indexOfFirstSparse < firstSparseMatrix.length; indexOfFirstSparse++)
+        	{
+            		for(int indexOfTransposeOfSecondSparse = 0; indexOfTransposeOfSecondSparse < transposeOfsecondSparseMatrix.length; indexOfTransposeOfSecondSparse++)
+            		{
+                		if(firstSparseMatrix[indexOfFirstSparse][1] == transposeOfsecondSparseMatrix[indexOfTransposeOfSecondSparse][1])
+                		{                
+                    			multiplicationMatrix[firstSparseMatrix[indexOfFirstSparse][0]][transposeOfsecondSparseMatrix[indexOfTransposeOfSecondSparse][0]] += firstSparseMatrix[indexOfFirstSparse][2] * transposeOfsecondSparseMatrix[indexOfTransposeOfSecondSparse][2];      
+                		}
+            		}
+        	}
 		return new SparseMatrix(multiplicationMatrix);
 	}
 	
@@ -193,7 +202,6 @@ final class SparseMatrix
 	            }
 	        } 
 	        });
-		
 		return sortedMatrix;
 	}	
 }
