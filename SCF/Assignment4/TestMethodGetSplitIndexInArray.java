@@ -9,13 +9,13 @@ import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
 /**
+ *
  * @author Nilesh Patel
  * This class designed for test getNumberOfClumpsInArray method of ArrOperation class.
  */
 @RunWith(Parameterized.class)
 public class TestMethodGetSplitIndexInArray 
 {
-
 	private int[] inputArray;
 	private Object expectedOutput;
 	static ArrOperation objectOfArrOperationCalss = new ArrOperation();
