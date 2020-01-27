@@ -54,9 +54,9 @@ public class TestDegreeMethod
 			Poly objectOfPolyClass = new Poly(this.inputPolynomial);
 			assertEquals(expectedOutput, objectOfPolyClass.degree());
 		}
-		catch(IOException io)
+		catch(Exception e)
 		{
-			assertEquals(expectedOutput, io.getMessage());
+			assertEquals(expectedOutput, e.getMessage());
 		}
 	}
 
