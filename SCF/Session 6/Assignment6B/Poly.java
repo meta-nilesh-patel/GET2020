@@ -7,7 +7,7 @@ import java.util.Map.Entry;
  * @author Nilesh Patel
  * Immutable class for Polynomial Operations
  */	
-final class Poly
+public final class Poly
 {
 	private final HashMap<Integer, Integer> polynomial = new HashMap<>();
 	private int degreeOfPolynomial;
@@ -18,12 +18,12 @@ final class Poly
 	 * @param int array of Polynomial
 	 * @throws IOException if the poly array is null
 	 */
-	Poly(int[] poly)throws IOException	
+	Poly(int[] poly) throws Exception	
 	{	
 		//inputValidation
 		if(poly.length == 0)
 		{
-			throw new IOException("Null Polynomial Not Allowed");
+			throw new Exception("Null Polynomial Not Allowed");
 		}
 		for (int indexOfPoly = 0; indexOfPoly < poly.length; indexOfPoly++)
 		{
