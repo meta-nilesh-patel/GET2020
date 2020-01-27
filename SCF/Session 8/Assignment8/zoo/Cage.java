@@ -58,7 +58,7 @@ public class Cage
 	 */
 	public boolean addAnimalInCage(Animal animal)
 	{	
-		if(this.cageSpecies != animal.species || this.capacityOfCage == this.TotalAnimalInCage)
+		if(this.cageSpecies != animal.species || this.capacityOfCage == this.totalAnimalInCage)
 		{
 			return false;
 		}		
