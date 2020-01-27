@@ -56,9 +56,9 @@ public class TestEvaluateMethod
 			Poly objectOfPolyClass = new Poly(this.inputPolynomial);
 			assertEquals(expectedOutput, objectOfPolyClass.evaluate(valueOfVariable));
 		}
-		catch(IOException io)
+		catch(Exception e)
 		{
-			assertEquals(expectedOutput, io.getMessage());
+			assertEquals(expectedOutput, e.getMessage());
 		}
 	}
 
