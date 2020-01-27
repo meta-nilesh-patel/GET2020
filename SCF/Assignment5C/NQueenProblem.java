@@ -59,9 +59,9 @@ public class NQueenProblem
      boolean solveNQueen(int[][]board, int startColumn, final int noOfQueens) throws AssertionError 
      { 
           if(noOfQueens < 1)
-    	     {
-    	          throw new AssertionError("No of Queens should be positive!");	
-    	     }
+          {
+    	          throw new AssertionError("No of Queens should be positive!");
+          }
           /**
            * base case: If all queens are placed then return true
            */
