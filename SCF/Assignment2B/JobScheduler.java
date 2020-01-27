@@ -10,8 +10,7 @@ import java.util.Comparator;
  */
 
 public class JobScheduler 
-{
-	
+{	
 	/**
 	 * 
 	 * @param process : two dimension array which contain arrival time and burst time of n process.
@@ -20,7 +19,6 @@ public class JobScheduler
 	 */
 	public static int[] getCompletionTime(final int process[][], final int noOfProcess) throws IOException
 	{
-		
 		//input validation.
 		boolean isValidInput = inputValidation(process, noOfProcess);
 		if( ! isValidInput)
@@ -57,7 +55,6 @@ public class JobScheduler
 			    }
 			    
 			}
-			
 		}
 		return completionTime;
 	}
@@ -70,7 +67,6 @@ public class JobScheduler
 	 */
 	public static int[] getWaitingTime(final int process[][], final int noOfProcess) throws IOException
 	{
-		
 		//input validation.
 		boolean isValidInput = inputValidation(process, noOfProcess);
 		if( ! isValidInput)
@@ -95,7 +91,6 @@ public class JobScheduler
 				waitingTime[index] = 0;
 				continue;
 			}
-			
 			int processTurnAroundTime = turnAroundTime[index];
 			int processBurstTime = sortedProcess[index][1];
 			waitingTime[index] = processTurnAroundTime - processBurstTime; 
@@ -111,7 +106,6 @@ public class JobScheduler
 	 */
 	public static int[] getTurnAroundTime(final int process[][], final int noOfProcess) throws IOException
 	{
-		
 		//input validation.
 		boolean isValidInput = inputValidation(process, noOfProcess);
 		if( ! isValidInput)
@@ -145,7 +139,6 @@ public class JobScheduler
 	 */
 	public static double getAverageWaitingTime(final int process[][], final int noOfProcess) throws IOException
 	{
-		
 		//input validation.
 		boolean isValidInput = inputValidation(process, noOfProcess);
 		if( ! isValidInput)
@@ -166,7 +159,6 @@ public class JobScheduler
 		{
 			totalWaitingTime += waitingTime[index]; 
 		}
-		
 		averageWaitingTime = (double) totalWaitingTime / noOfProcess;
 		return averageWaitingTime;
 	}
@@ -179,7 +171,6 @@ public class JobScheduler
 	 */
 	public static int getMaximumWaitingTime(final int process[][], final int noOfProcess) throws IOException
 	{
-		
 		//input validation.
 		boolean isValidInput = inputValidation(process, noOfProcess);
 		if( ! isValidInput)
