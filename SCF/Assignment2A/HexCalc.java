@@ -116,7 +116,7 @@ public class HexCalc implements ArithmeticLogicalOperation
 			return "0";
 		}
 		
-		int reminder;
+		int remainder;
 		StringBuilder hexString = new StringBuilder();
 		long decimal = Long.parseLong(operand);
 		
@@ -124,13 +124,13 @@ public class HexCalc implements ArithmeticLogicalOperation
 		{
 			reminder = (int) decimal % base;
 			decimal = decimal / base;
-			if(reminder>=10 && reminder<=15)
+			if(remainder>=10 && remainder<=15)
 			{
-				hexString.append(HexCalc.decToHexTable.get(reminder));
+				hexString.append(HexCalc.decToHexTable.get(remainder));
 			}
 			else
 			{
-				hexString.append(reminder);
+				hexString.append(remainder);
 			}
 			
 		}
