@@ -6,18 +6,15 @@ import java.util.Scanner;
  * AreaMain Class used to perform test on Area Class
  * It interact with user and take input and get the result 
  * from Area Class and print to console
- *
  */
 public class TestArea 
 {
 
 	public static void main(String[] args) 
 	{
-		
 		Area area = new Area();
 		Scanner userInput = new Scanner(System.in);
-		
-		while(true)
+		do
 		{	
 			System.out.println("1. Get Area Of Right Angle Triangle");
 			System.out.println("2. Get Area Of Rectangle");
@@ -33,7 +30,6 @@ public class TestArea
 				System.out.println("Thank You");
 				System.exit(0);
 			}
-			
 			//switch case for option selection
 			switch(userChoice)
 			{
@@ -49,13 +45,11 @@ public class TestArea
 						
 						double areaOfRightAngleTriangle = area.getAreaOfTriangle(heightOfRightAngleTriangle, baseOfRightAngleTriangle);
 						System.out.printf("Area Of Right Angle Triangle is : %.2f \n", areaOfRightAngleTriangle);
-						
 					}
 					catch(Exception e)
 					{
-						System.out.println(e);
+						e.printStackTrace();
 					}
-					
 					break;
 				}
 				
@@ -70,14 +64,12 @@ public class TestArea
 						double baseOfRectangle = userInput.nextDouble();
 						
 						double areaOfRectangle = area.getAreaOfRectangle(heightOfRectangle, baseOfRectangle);
-						System.out.printf("Area Of Rectangle is : %.2f \n", areaOfRectangle);
-						
+						System.out.printf("Area Of Rectangle is : %.2f \n", areaOfRectangle);	
 					}
 					catch(Exception e)
 					{
-						System.out.println(e);
+						e.printStackTrace();
 					}
-					
 					break;
 				}
 				
@@ -91,13 +83,11 @@ public class TestArea
 						
 						double areaOfSquare = area.getAreaOfSquare(baseOfSquare);
 						System.out.printf("Area Of Square is : %.2f \n",areaOfSquare);
-						
 					}
 					catch(Exception e)
 					{
-						System.out.println(e);
+						e.printStackTrace();
 					}
-					
 					break;
 				}
 				
@@ -111,22 +101,21 @@ public class TestArea
 						
 						double areaOfCircle = area.getAreaOfCircle(radiusOfCircle);
 						System.out.printf("Area Of Circle is : %.2f \n" , areaOfCircle);
-						
 					}
 					catch(Exception e)
 					{
-						System.out.println(e);
+						e.printStackTrace();
 					}
-					
 					break;
 				}
 				
 				default:
 				{
 					System.out.println("Invalid Option!!!");
+					break;
 				}
 			}
-		}
+		}while(true);
 
 	}
 
