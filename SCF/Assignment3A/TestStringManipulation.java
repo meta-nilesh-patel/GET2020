@@ -7,18 +7,16 @@ import java.util.*;
  * This Class used as a input class for String Manipulation Class
  * It provide user option and get the result from StringManipulation Class
  * respective methods and print them on console
- *
  */
 public class TestStringManipulation 
 {
-
 	public static void main(String[] args) 
 	{	
 		StringManipulation stringManipulation = new StringManipulation();
 		Scanner userInput = new Scanner(System.in);
 
 		//while loop for options
-		while (true) 
+		do
 		{
 			System.out.println("1.Compare Two Strings");
 			System.out.println("2.Reverse Of A String");
@@ -120,8 +118,6 @@ public class TestStringManipulation
 				System.out.println("Invalid Choice!!!");
 			}
 			}
-		}
-
+		}while(true);
 	}
-
 }
