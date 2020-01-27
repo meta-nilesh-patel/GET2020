@@ -1,6 +1,6 @@
 
-public class Item {
-	
+public class Item 
+{	
 		private final String name;
 		private int quantity=0;
 		private double price;
