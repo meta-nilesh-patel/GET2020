@@ -22,8 +22,8 @@ public class TestMethodGetSplitIndexInArray
 	
 	public TestMethodGetSplitIndexInArray(int[] input, Object expectedOutput)
 	{
-			this.inputArray = input;
-			this.expectedOutput = expectedOutput;
+		this.inputArray = input;
+		this.expectedOutput = expectedOutput;
 	}
 		
 	@Parameters
