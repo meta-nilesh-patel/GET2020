@@ -57,9 +57,9 @@ public class TestMultiPlyMethod
 			int[] actualOutput = Poly.multiplyPoly(objectOfPolyClass1, objectOfPolyClass2).getPolynomialArray();
 			assertArrayEquals(expectedOutput, actualOutput);
 		}
-		catch(IOException io)
+		catch(Exception e)
 		{
-			assertEquals("Null Polynomial Not Allowed", io.getMessage());
+			assertEquals("Null Polynomial Not Allowed", e.getMessage());
 		}
 	}
 	
@@ -71,9 +71,9 @@ public class TestMultiPlyMethod
 			Poly objectOfPolyClass2 = new Poly(new int[]{4, 5, 6});
 			int[] actualOutput = Poly.multiplyPoly(objectOfPolyClass1, objectOfPolyClass2).getPolynomialArray();
 		}
-		catch(IOException io)
+		catch(Exception e)
 		{
-			assertEquals("Null Polynomial Not Allowed", io.getMessage());
+			assertEquals("Null Polynomial Not Allowed", e.getMessage());
 		}
 	}
 }
