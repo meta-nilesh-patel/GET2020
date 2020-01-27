@@ -9,7 +9,6 @@ import java.util.Scanner;
  */
 public class TestHexCalc 
 {
-
 	public static void main(String[] args) 
 	{
 		HexCalc hexaDecimal = new HexCalc();
@@ -18,7 +17,7 @@ public class TestHexCalc
 		
 		//for taking user input from keyboard
 		Scanner userInput = new Scanner(System.in);
-		while(true)
+		do
 		{
 		       System.out.println("Please Select choice!");
 		       System.out.println("Enter 1 for HexaDecimal Addition");
@@ -192,8 +191,6 @@ public class TestHexCalc
 			    	   {
 			    		   System.out.println(io);
 			    	   }
-			    	   
-			    	   
 			    	   break;
 			       }
 			       
@@ -203,7 +200,6 @@ public class TestHexCalc
 			    	   firstOperand = userInput.next().toUpperCase();
 			    	   System.out.print("Please Enter Second HexaDecimal Number:");
 			    	   secondOperand = userInput.next().toUpperCase();
-			    	   
 			    	   try
 			    	   {
 			    		   /**
@@ -272,8 +268,7 @@ public class TestHexCalc
 			       case(8):
 			       {
 			    	   System.out.print("Please Enter HexaDecimal Number:");
-			    	   firstOperand =userInput.next().toUpperCase();
-			    	   
+			    	   firstOperand =userInput.next().toUpperCase()
 			    	   try
 			    	   {
 			    		   /**
@@ -291,14 +286,12 @@ public class TestHexCalc
 			    	   {
 			    		   System.out.println(io);
 			    	   }
-			    	  
 			    	   break;
 			       }
 			       case(9):
 			       {
 			    	   System.out.print("Please Enter Decimal Number:");
 			    	   String decimal = userInput.next();
-			    	   
 			    	   try
 			    	   {
 			    		   /**
@@ -325,7 +318,7 @@ public class TestHexCalc
 			    	   System.out.println("Invalid Input!!!!");
 			    	   break;
 			       }
-			  };	      
+			  }while(true);	      
 		}		     
 	}
 }
