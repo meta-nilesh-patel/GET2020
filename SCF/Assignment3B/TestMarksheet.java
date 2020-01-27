@@ -9,8 +9,8 @@ import java.util.Scanner;
  * and get the result from Marksheet Class and print
  * them on console
  */
-public class TestMarksheet {
-
+public class TestMarksheet 
+{
 	public static void main(String[] args)
 	{
 		Marksheet marksheet = new Marksheet();
@@ -20,6 +20,12 @@ public class TestMarksheet {
 		System.out.println("Enter Number Of Student : ");
 		int numberOfStudent = userInput.nextInt();
 		
+		while(numberOfStudent == 0)
+		{
+			System.out.println("No of students should be greater than 0);
+			System.out.println("Enter Number Of Student : ");
+			numberOfStudent = userInput.nextInt();
+		}
 		//array stores all student grades
 		double studentGrades[] = new double[numberOfStudent];
 		
@@ -29,9 +35,8 @@ public class TestMarksheet {
 			System.out.print("Enter Grade Of "+ (studentIndex+1)+" Student : ");
 			studentGrades[studentIndex] = userInput.nextDouble();
 		}
-		
 		//option selecting loop
-		while(true)
+		do
 		{
 			System.out.println("1. Print Average Grades Of All Student");
 			System.out.println("2. Print Maximum Grades Of All Student");
@@ -40,7 +45,6 @@ public class TestMarksheet {
 			System.out.println("5. Exit");
 			
 			int userChoice = userInput.nextInt();
-			
 			if(userChoice == 5)
 			{
 				System.out.println("Thank You");
@@ -61,7 +65,6 @@ public class TestMarksheet {
 					{
 						System.out.println(io);
 					}
-					
 					break;
 				}
 				
@@ -77,7 +80,6 @@ public class TestMarksheet {
 					{
 						System.out.println(io);
 					}
-					
 					break;
 				}
 				
@@ -93,7 +95,6 @@ public class TestMarksheet {
 					{
 						System.out.println(io);
 					}
-					
 					break;
 				}
 				
@@ -109,16 +110,16 @@ public class TestMarksheet {
 					{
 						System.out.println(io);
 					}
-					
 					break;
 				}
 				
 				default:
 				{
 					System.out.println("Invalid Option!!!");
+					break;
 				}
 			}
-		}
+		}while(true);
 	}
 
 }
