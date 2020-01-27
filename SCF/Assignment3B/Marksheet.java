@@ -5,7 +5,6 @@ import java.io.IOException;
  * @author Nilesh Patel
  * Marksheet Class implement methods to perform on all student grades
  * This include finding maximum,minimum grades or average grades,percentage of pass student
- *
  */
 public class Marksheet 
 {
@@ -19,7 +18,7 @@ public class Marksheet
 	 * @param numberOfStudent : total number of students.
 	 * @return average grade from all student grades
 	 */
-	public double getAverageOfAllGrades(double grades[],int numberOfStudent) throws IOException
+	public double getAverageOfAllGrades(double grades[], int numberOfStudent) throws IOException
 	{		
 		//grades and student validation
 		if(numberOfStudent <= 0)
@@ -48,7 +47,7 @@ public class Marksheet
 	 * @param numberOfStudent : total number of students.
 	 * @return maximum grade.
 	 */
-	public double getMaximumOfAllGrades(double grades[],int numberOfStudent) throws IOException
+	public double getMaximumOfAllGrades(double grades[], int numberOfStudent) throws IOException
 	{	
 		//grades and student validation
 		if(numberOfStudent <= 0)
@@ -79,7 +78,7 @@ public class Marksheet
 	 * @param numberOfStudent : total number of students.
 	 * @return minimum grade in all student grades
 	 */
-	public double getMinimumOfAllGrades(double grades[],int numberOfStudent) throws IOException
+	public double getMinimumOfAllGrades(double grades[], int numberOfStudent) throws IOException
 	{
 		//grades and student validation
 		if(numberOfStudent <= 0)
@@ -110,7 +109,7 @@ public class Marksheet
 	 * @param numberOfStudent : total number of students.
 	 * @return percentage of student passed
 	 */
-	public double getPercentageOfPassStudent(double grades[],int numberOfStudent) throws IOException
+	public double getPercentageOfPassStudent(double grades[], int numberOfStudent) throws IOException
 	{		
 		//grades and student validation
 		if(numberOfStudent <= 0)
