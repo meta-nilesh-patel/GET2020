@@ -63,7 +63,7 @@ public class TestMarksheet
 					}
 					catch(IOException io)
 					{
-						System.out.println(io);
+						io.printStackTrace();
 					}
 					break;
 				}
@@ -78,7 +78,7 @@ public class TestMarksheet
 					}
 					catch(IOException io)
 					{
-						System.out.println(io);
+						io.printStackTrace();
 					}
 					break;
 				}
@@ -93,7 +93,7 @@ public class TestMarksheet
 					}
 					catch(IOException io)
 					{
-						System.out.println(io);
+						io.printStackTrace();
 					}
 					break;
 				}
@@ -108,7 +108,7 @@ public class TestMarksheet
 					}
 					catch(IOException io)
 					{
-						System.out.println(io);
+						io.printStackTrace();
 					}
 					break;
 				}
