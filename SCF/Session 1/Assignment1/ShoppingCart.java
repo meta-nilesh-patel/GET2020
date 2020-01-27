@@ -6,72 +6,71 @@ public class ShoppingCart
 	Set<Item> cart=new HashSet<Item>();
 	
 	//Hash map created in it key will be name of item and value will be object of that item! 
-	static Map< String, Item> items =  new HashMap< String, Item>();
+	static Map< String, Item> itemsByName =  new HashMap< String, Item>();
     
 	//initializing store items add them into HashMap items;
 	static
 	{
 		Item a = new Item("a",20.0);
-		items.put(a.getName(), a);
+		itemsByName.put(a.getName(), a);
 		Item b = new Item("b", 60.5);
-		items.put(b.getName(), b);
+		itemsByName.put(b.getName(), b);
 		Item c = new Item("c",34.0);
-		items.put(c.getName(), c);
+		itemsByName.put(c.getName(), c);
 		Item d = new Item("d",20.0);
-		items.put(d.getName(), d);
+		itemsByName.put(d.getName(), d);
 		Item e = new Item("e", 60.5);
-		items.put(e.getName(), e);
+		itemsByName.put(e.getName(), e);
 		Item f = new Item("f",34.0);
-		items.put(f.getName(), f);
+		itemsByName.put(f.getName(), f);
 		Item g = new Item("g",20.0);
-		items.put(g.getName(), g);
+		itemsByName.put(g.getName(), g);
 		Item h = new Item("h", 60.5);
-		items.put(h.getName(), h);
+		itemsByName.put(h.getName(), h);
 		Item i = new Item("i",34.0);
-		items.put(i.getName(), i);
+		itemsByName.put(i.getName(), i);
 		Item j = new Item("j",20.0);
-		items.put(j.getName(), j);
+		itemsByName.put(j.getName(), j);
 		Item k = new Item("k", 60.5);
-		items.put(k.getName(), k);
+		itemsByName.put(k.getName(), k);
 		Item l = new Item("l",34.0);
-		items.put(l.getName(), l);
+		itemsByName.put(l.getName(), l);
 		
 	}
 	
 	
 	public static void main(String[] args) 
 	{
-			
-			//creating a scanner object for taking inputs!
-		 	Scanner input = new Scanner(System.in);
+		//creating a scanner object for taking inputs!
+		 Scanner input = new Scanner(System.in);
 		 	
-		 	//creating object of ShoopingCart Class for user! 
-		 	ShoppingCart cart = new ShoppingCart();
+		 //creating object of ShoopingCart Class for user! 
+		 ShoppingCart cart = new ShoppingCart();
 			
-			//display available items with their price!
-			System.out.println("Available Items! \nName \t\t price");
+		//display available items with their price!
+		System.out.println("Available Items! \nName \t\t price");
 			
-			for (Map.Entry<String, Item> entry : items.entrySet()){  
+		for (Map.Entry<String, Item> entry : items.entrySet())
+		{  
 	            System.out.println(entry.getKey() + " \t\t " + entry.getValue().getPrice()); 
 	        } 
 			
-			int choice;// taking choice from user!
+		int choice;// taking choice from user!
 			
-			do
-			{
-				System.out.println("Choose your Choice!");				
-				System.out.println("Enter 1 for Display items of Cart!");
-				System.out.println("Enter 2 for Add an item from Cart");
-				System.out.println("Enter 3 for Remove an item in cart!");
-				System.out.println("Enter 4 for when you are done and want to Generate bill!");
-				System.out.println("Enter 5 for Exit.");
+		do
+		{
+			System.out.println("Choose your Choice!");				
+			System.out.println("Enter 1 for Display items of Cart!");
+			System.out.println("Enter 2 for Add an item from Cart");
+			System.out.println("Enter 3 for Remove an item in cart!");
+			System.out.println("Enter 4 for when you are done and want to Generate bill!");
+			System.out.println("Enter 5 for Exit.");
 				
-				choice = input.nextInt();
-				//consume the \n character which left by nextInt!
-				input.nextLine();
+			choice = input.nextInt();
+			//consume the \n character which left by nextInt!
+			input.nextLine();
 				
-				
-				switch(choice)
+			switch(choice)
 				{
 					case 1:
 						cart.displayCart();
@@ -139,7 +138,7 @@ public class ShoppingCart
 	 */
 	public boolean isItemInStore(String item)
 	{
-	    for (Map.Entry<String, Item> entry : items.entrySet())
+	    for (Map.Entry<String, Item> entry : itemsByName.entrySet())
 	    {
             	if(entry.getValue().getName().equals(item))
 		{
@@ -158,8 +157,10 @@ public class ShoppingCart
 	public boolean isItemInCart(String item){
 		Iterator<Item> value = this.cart.iterator();
 		
-		while(value.hasNext()){
-			if(value.next().getName().equals(item)){
+		while(value.hasNext())
+		{
+			if(value.next().getName().equals(item))
+			{
 				return true;
 			}
 		}
@@ -188,7 +189,6 @@ public class ShoppingCart
 		 }	
 	}
 	
-	
 	/** 
 	 * add item in user's cart.
 	 * @param item : item to be added.
@@ -196,10 +196,9 @@ public class ShoppingCart
 	 */
 	public void addItemInCart(String item, int incQuantity)
 	{
-		this.cart.add(items.get(item));
-		items.get(item).incQuantity(incQuantity);
+		this.cart.add(itemsByName.get(item));
+		itemsByName.get(item).incQuantity(incQuantity);
 	}
-	
 	
 	/**
 	 * remove item from user's Cart.
@@ -208,18 +207,17 @@ public class ShoppingCart
 	 */
 	public void removeItemFromCart(String item, int decQuantity)
 	{
-		if(items.get(item).getQuantity()<=decQuantity)
+		if(itemsByName.get(item).getQuantity()<=decQuantity)
 		{
-			this.cart.remove(items.get(item));
-			items.get(item).decQuantity(items.get(item).getQuantity());
+			this.cart.remove(itemsByName.get(item));
+			itemsByName.get(item).decQuantity(itemsByName.get(item).getQuantity());
 		}
 		else
 		{
-			items.get(item).decQuantity(decQuantity);
+			itemsByName.get(item).decQuantity(decQuantity);
 		}
 		
 	}
-	
 	
 	/** 
 	 * generate the Cart bill!
@@ -236,6 +234,5 @@ public class ShoppingCart
 		}
 		return totalAmount;
 	}
-	
 	 
 }
