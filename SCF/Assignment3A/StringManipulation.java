@@ -12,7 +12,7 @@ public class StringManipulation
 	 * 
 	 * @param firstString : first string which we want to compare.
 	 * @param secondString : second string which we want to compare.
-	 * @fisrtString or @secondString should not be null.
+	 * @firstString or @secondString should not be null.
 	 * @return 1 if both string are equal else 0. 
 	 */
 	public int stringComparator(String firstString, String secondString) throws IOException
@@ -77,8 +77,7 @@ public class StringManipulation
 		/**
 		 * making @reversedString immutable.
 		 */
-		String finalreversedString = reversedString.toString();
-		return finalreversedString;
+		return reversedString.toString();
 	}
 	
 	/**
