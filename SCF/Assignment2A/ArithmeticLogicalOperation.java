@@ -71,5 +71,4 @@ public interface ArithmeticLogicalOperation
 	 */
 	public boolean lessThanOperation(String firstOperand, String secondOperand) throws IOException;
 	
-
 }
