@@ -56,7 +56,7 @@ public class TestStringManipulation
 				}
 				catch(IOException io)
 				{
-					System.out.println(io);
+					io.printStackTrace();
 				}
 				break;
 			}
@@ -73,7 +73,7 @@ public class TestStringManipulation
 				}
 				catch(IOException io)
 				{
-					System.out.println(io);
+					io.printStackTrace();
 				}
 				break;
 			}
@@ -91,7 +91,7 @@ public class TestStringManipulation
 				}
 				catch(IOException io)
 				{
-					System.out.println(io);
+					io.printStackTrace();
 				}
 				break;
 			}
@@ -108,7 +108,7 @@ public class TestStringManipulation
 				}
 				catch(IOException io)
 				{
-					System.out.println(io);
+					io.printStackTrace();
 				}
 				break;
 			}
