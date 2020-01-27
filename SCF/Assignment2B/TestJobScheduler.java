@@ -34,7 +34,7 @@ public class TestJobScheduler
 		//For store user's choice.
 		int userChoice;
 			
-		while(true)
+		do
 		{
 			System.out.println("Enter 1 for calculate Completion Time Of each process");
 			System.out.println("Enter 2 for calculate Waiting Time of each process");
@@ -144,7 +144,7 @@ public class TestJobScheduler
 					System.out.println("Please enter a valid choice");
 					break;					
 			
-			}
+			}while(true);
 		}
 		
 	}
