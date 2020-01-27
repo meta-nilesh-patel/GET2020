@@ -66,7 +66,7 @@ public class TestHexCalc
 			    	   }
 			    	   catch(IOException io)
 			    	   {
-			    		   System.out.println(io);			    	   
+			    		   io.printStackTrace();			    	   
 			           }
 				   break;    
 			       }   
@@ -94,7 +94,7 @@ public class TestHexCalc
 			    	   }
 			    	   catch(IOException io)
 			    	   {
-			    		   System.out.println(io);
+			    		   io.printStackTrace();
 			    	   }
 			    	   break;
 			       }
@@ -122,11 +122,11 @@ public class TestHexCalc
 			    	   }
 			    	   catch(IOException io)
 			    	   {
-			    		   System.out.println(io);
+			    		   io.printStackTrace();
 			    	   }
 			    	   catch(ArithmeticException ae)
 			    	   {
-			    		   System.out.println(ae);
+			    		   ae.printStackTrace();
 			    	   }
 			    	   break;
 			       }
@@ -154,7 +154,7 @@ public class TestHexCalc
 			    	   }
 			    	   catch(IOException io)
 			    	   {
-			    		   System.out.println(io);
+			    		   io.printStackTrace();
 			    	   }
 			    	   break;
 			       }
@@ -189,7 +189,7 @@ public class TestHexCalc
 			    	   }
 			    	   catch(IOException io)
 			    	   {
-			    		   System.out.println(io);
+			    		   io.printStackTrace();
 			    	   }
 			    	   break;
 			       }
@@ -223,7 +223,7 @@ public class TestHexCalc
 			    	   }
 			    	   catch(IOException io)
 			    	   {
-			    		   System.out.println(io);
+			    		   io.printStackTrace();
 			    	   }
 			    	  
 			    	   break;
@@ -259,9 +259,8 @@ public class TestHexCalc
 			    	   }
 			    	   catch(IOException io)
 			    	   {
-			    		   System.out.println(io);
+			    		   io.printStackTrace();
 			    	   }
-			    	  
 			    	   break;
 			       }
 			       
@@ -284,7 +283,7 @@ public class TestHexCalc
 			    	   }
 			    	   catch(IOException io)
 			    	   {
-			    		   System.out.println(io);
+			    		   io.printStackTrace();
 			    	   }
 			    	   break;
 			       }
@@ -308,7 +307,7 @@ public class TestHexCalc
 			    	   }
 			    	   catch(IOException io)
 			    	   {
-			    		   System.out.println(io);
+			    		   io.printStackTrace();
 			    	   }
 			    	   break;
 			       }
