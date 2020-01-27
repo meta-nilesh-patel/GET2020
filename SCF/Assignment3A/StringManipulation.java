@@ -131,8 +131,7 @@ public class StringManipulation
 		/**
 		 * making @reversedString immutable.
 		 */
-		String finalConvertedString = convertedString.toString();
-		return finalConvertedString;
+		return convertedString.toString();
 	}
 	
 	/**
