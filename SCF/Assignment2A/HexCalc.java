@@ -144,7 +144,7 @@ public class HexCalc implements ArithmeticLogicalOperation
 	 * @return result of addition of two operand 
 	 * @throws IOException if parameter not contain legal value
 	 */
-	public String addOperation(String firstOperand , String secondOperand) throws IOException
+	public String addOperation(String firstOperand, String secondOperand) throws IOException
 	{
 		/**
 		 * 
@@ -167,7 +167,7 @@ public class HexCalc implements ArithmeticLogicalOperation
 	 * @return result of subtraction of two operand
 	 * @throws IOException if parameter not contain legal value 
 	 */
-	public String subtractOperation(String firstOperand , String secondOperand) throws IOException
+	public String subtractOperation(String firstOperand, String secondOperand) throws IOException
 	{
 		/**
 		 * 
@@ -194,7 +194,7 @@ public class HexCalc implements ArithmeticLogicalOperation
 	 * @return result of multiplication of two operand
 	 * @throws IOException if parameter not contain legal value 
 	 */
-	public String multiplicationOperation(String firstOperand , String secondOperand) throws IOException
+	public String multiplicationOperation(String firstOperand, String secondOperand) throws IOException
 	{
 		/**
 		 * 
@@ -217,7 +217,7 @@ public class HexCalc implements ArithmeticLogicalOperation
 	 * @return result of division of two operand
 	 * @throws IOException if parameter not contain legal value
 	 */
-	public String divisonOperation(String firstOperand , String secondOperand) throws ArithmeticException, IOException
+	public String divisonOperation(String firstOperand, String secondOperand) throws ArithmeticException, IOException
 	{
 		/**
 		 * 
