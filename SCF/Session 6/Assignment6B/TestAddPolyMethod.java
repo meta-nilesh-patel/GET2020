@@ -14,7 +14,6 @@ import org.junit.runners.Parameterized.Parameters;
  * @author Nilesh Patel
  * This class test addPoly method of Poly class;
  */
-
 @RunWith(Parameterized.class)
 public class TestAddPolyMethod
 {
@@ -61,9 +60,9 @@ public class TestAddPolyMethod
 				assertEquals(expectedOutput[index], actualOutput[index]);
 			}
 		}
-		catch(IOException io)
+		catch(Exception e)
 		{
-			assertEquals("Null Polynomial Not Allowed", io.getMessage());
+			assertEquals("Null Polynomial Not Allowed", e.getMessage());
 		}
 	}
 	
@@ -75,9 +74,9 @@ public class TestAddPolyMethod
 			Poly objectOfPolyClass2 = new Poly(new int[]{4, 5, 6});
 			int[] actualOutput = Poly.addPoly(objectOfPolyClass1, objectOfPolyClass2).getPolynomialArray();
 		}
-		catch(IOException io)
+		catch(Exception e)
 		{
-			assertEquals("Null Polynomial Not Allowed", io.getMessage());
+			assertEquals("Null Polynomial Not Allowed", e.getMessage());
 		}
 	}
 }
