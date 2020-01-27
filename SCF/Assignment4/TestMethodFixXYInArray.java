@@ -25,10 +25,10 @@ public class TestMethodFixXYInArray
 	
 	public TestMethodFixXYInArray(int[] input, int x, int y, int[] expectedOutput)
 	{
-			this.inputArray = input;
-			this.expectedOutput = expectedOutput;
-			this.x = x;
-			this.y = y;
+		this.inputArray = input;
+		this.expectedOutput = expectedOutput;
+		this.x = x;
+		this.y = y;
 	}
 		
 	@Parameters
