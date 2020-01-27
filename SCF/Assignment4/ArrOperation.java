@@ -3,8 +3,8 @@ import java.util.List;
 
 /**
  * 
- * This Class implements methods to perform operation on positive integer array
  * @author Nilesh Patel
+ * This Class implements methods to perform operation on positive integer array
  */
 public class ArrOperation 
 {
@@ -305,13 +305,13 @@ public class ArrOperation
 	 */
 	private boolean inputValidation(int inputArray[])
 	{
-			for(int arrayIndex =0; arrayIndex < inputArray.length; arrayIndex++)
-			{
-				if(inputArray[arrayIndex] < 0)
-				{ 
-					return false; 
-				}
+		for(int arrayIndex =0; arrayIndex < inputArray.length; arrayIndex++)
+		{
+			if(inputArray[arrayIndex] < 0)
+			{ 
+				return false; 
 			}
+		}
 		return true;
 	}
 }
