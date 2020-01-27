@@ -54,13 +54,33 @@ public class LcmHcf
 	 * @param secondNumber : second number for compute LCM and it should be greater than zero.
 	 * @return LCM of firstNumber and secondNumber.
 	 */
-	public int getLCM(int firstNumber, int secondNumber) throws AssertionError
+	public int getLCM(int firstNumber, int secondNumber)
 	{
-		//computing HCF for two number by calling getHCF method.
-		int hcf = this.getHCF(firstNumber, secondNumber);
+		if(firstNumber < 1 || secondNumber < 1)
+		{
+			throw new AssertionError("found invalid input!!, Both input should greater than 0.");
+		}
+		int lcm = 0;
+		return helperGetLCM(firstNumber, secondNumber, lcm);
+	}
+	
+	/**
+	 * 
+	 * Utility method for getLCM.
+	 * @param firstNumber : first number for compute LCM and it should be greater than zero.
+	 * @param secondNumber : second number for compute LCM and it should be greater than zero.
+	 * @param lcm : initially lcm will be 0;
+	 * @return LCM of first number and second number.
+	 */
+	public int helperGetLCM(int firstNumber, int secondNumber, int lcm)
+	{
+		lcm += secondNumber;
 		
-		//applying formula (firstNumber * secondNumber = HCF * LCM)           
-		return (firstNumber * secondNumber) / hcf;
+		if(lcm % firstNumber == 0)
+		{
+			return lcm;
+		}
+		return helperGetLCM(firstNumber, secondNumber, lcm);		
 	}
 }
 
