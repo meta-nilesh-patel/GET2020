@@ -55,8 +55,10 @@ public class Zoo
 		/**
 		 * checking every zone that is available in the zoo 
 		 */
-		for(Zone zone : Zoo.zonesInZoo.values()){
-			if(zone.categoryOfAnimalSupported.equalsIgnoreCase(animal.category) && zone.subcategoryOfAnimalSupported.equalsIgnoreCase(animal.subCatagory)){
+		for(Zone zone : Zoo.zonesInZoo.values())
+		{
+			if(zone.categoryOfAnimalSupported.equalsIgnoreCase(animal.category) && zone.subcategoryOfAnimalSupported.equalsIgnoreCase(animal.subCatagory))
+			{
 				return zone;
 			}
 		}
