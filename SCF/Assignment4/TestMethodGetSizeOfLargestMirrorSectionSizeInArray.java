@@ -22,8 +22,8 @@ public class TestMethodGetSizeOfLargestMirrorSectionSizeInArray
 	
 	public TestMethodGetSizeOfLargestMirrorSectionSizeInArray(int[] input, Object expectedOutput)
 	{
-			this.inputArray = input;
-			this.expectedOutput = expectedOutput;
+		this.inputArray = input;
+		this.expectedOutput = expectedOutput;
 	}
 		
 	@Parameters
