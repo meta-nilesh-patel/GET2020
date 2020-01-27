@@ -26,13 +26,13 @@ public class Cage
 	/**
 	 * total animal in the cage currently 
 	 */
-	public int TotalAnimalInCage;
+	public int totalAnimalInCage;
 
 	/**
 	 * This HashMap store details about the animals stored in the cage
 	 * key is the unique name of the animal and value is the animal object
 	 */
-	public HashMap<String,Animal> animalList = new HashMap<String,Animal>();
+	public HashMap<String, Animal> animalList = new HashMap<String, Animal>();
 
 	/**
 	 * 
@@ -46,7 +46,7 @@ public class Cage
 	{
 		this.capacityOfCage = capacityOfCage;
 		this.cageSpecies = cageSpecies;
-		this.TotalAnimalInCage = 0;
+		this.totalAnimalInCage = 0;
 	}
 
 	/**
@@ -63,7 +63,7 @@ public class Cage
 			return false;
 		}		
 		this.animalList.put(animal.uniqueName, animal);
-		this.TotalAnimalInCage++;
+		this.totalAnimalInCage++;
 		return true;
 	}
 
