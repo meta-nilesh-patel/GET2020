@@ -1,5 +1,3 @@
-
-
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
@@ -14,20 +12,23 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
+ *
+ * @author Nilesh Patel
  * Servlet implementation class SearchStudent
  */
-
-public class SearchStudent extends HttpServlet {
+public class SearchStudent extends HttpServlet 
+{
 	private static final long serialVersionUID = 1L;
 
 	/**
+	 *
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
 		PrintWriter out = response.getWriter();
 		try 
-	    {
+	        {
 			Connection con = DatabaseConnection.initializeDatabase();
 			String name = request.getParameter("name");
 			PreparedStatement st = con .prepareStatement("select * from student where first_name = ? or last_name = ?"); 
@@ -39,12 +40,11 @@ public class SearchStudent extends HttpServlet {
 			st.close();
 			con.close();
 		} 
-	    catch (Exception e) 
-	    {
+	        catch (Exception e) 
+	        {
 		    out.println("<html><body><b>operation Search student Students faild"+ "</b></body></html>");
 			e.printStackTrace();
 		} 
 	}
-
 
 }
