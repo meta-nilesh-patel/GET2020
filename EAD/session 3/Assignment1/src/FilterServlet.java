@@ -1,5 +1,3 @@
-
-
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
@@ -16,16 +14,16 @@ import javax.servlet.http.HttpSession;
 import com.mysql.cj.Session;
 
 /**
+ *
+ * @author Nilesh Patel
  * Servlet implementation class FilterServlet
  */
-
-public class FilterServlet extends HttpServlet {
+public class FilterServlet extends HttpServlet 
+{
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
 	/**
+	 *
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
