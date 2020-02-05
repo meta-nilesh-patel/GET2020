@@ -3,7 +3,8 @@ import java.sql.DriverManager;
 import java.sql.SQLException; 
   
 /** 
- * @author Ramdev
+ *
+ * @author Nilesh Patel
  * This class can be used to initialize the database connection
  */
 public class DatabaseConnection 
@@ -17,7 +18,7 @@ public class DatabaseConnection
         // Database name to access 
         String dbName = "myDatabase"; 
         String dbUsername = "root"; 
-        String dbPassword = "rama429874"; 
+        String dbPassword = "00026"; 
   
         Class.forName(dbDriver); 
         Connection con = DriverManager.getConnection(dbURL + dbName, dbUsername, dbPassword); 
