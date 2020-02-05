@@ -13,21 +13,22 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
+ * @author Nilesh Patel
  * Servlet implementation class EditStudent
  */
-public class EditStudent extends HttpServlet {
+public class EditStudent extends HttpServlet 
+{
 	private static final long serialVersionUID = 1L;
        
-
 	/**
+	 *
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
-
 		PrintWriter out = response.getWriter();
 		try 
-	    {
+	        {
 			Connection con = DatabaseConnection.initializeDatabase();
 			Integer id = Integer.parseInt(request.getParameter("id"));
 
@@ -38,8 +39,8 @@ public class EditStudent extends HttpServlet {
 			request.getRequestDispatcher("myWebContent/updateStudent.jsp").forward(request, response);
 			con.close();
 		} 
-	    catch (Exception e) 
-	    {
+	        catch (Exception e) 
+	        {
 		    out.println("<html><body><b>operation Edit student Students faild"+ "</b></body></html>");
 			e.printStackTrace();
 		} 
@@ -47,6 +48,7 @@ public class EditStudent extends HttpServlet {
 	}
 
 	/**
+	 *
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
@@ -66,16 +68,16 @@ public class EditStudent extends HttpServlet {
 			  Connection con = DatabaseConnection.initializeDatabase();
 			  PreparedStatement st = con.prepareStatement("update student set first_name = ?, last_name = ?, father_name = ?, email = ?, class = ?, age = ? where id = ?"); 
 	 
-	          st.setString(1, firstName);
-	          st.setString(2, lastName);
-	          st.setString(3, fatherName);
-	          st.setString(4, email);
-	          st.setString(5, classOfStudent);
-	          st.setInt(6, Integer.parseInt(age));
-	          st.setInt(7,Integer.parseInt(id));
-	          st.executeUpdate();
+	          	  st.setString(1, firstName);
+	          	  st.setString(2, lastName);
+	          	  st.setString(3, fatherName);
+	          	  st.setString(4, email);
+	          	  st.setString(5, classOfStudent);
+	          	  st.setInt(6, Integer.parseInt(age));
+	          	  st.setInt(7,Integer.parseInt(id));
+	          	  st.executeUpdate();
 			  st.close();
-	          con.close();
+	          	  con.close();
 			  out.println("<html><body><b>Successfully Updated "+ "</b></body></html>");
 		  }
 		  catch(Exception e)
