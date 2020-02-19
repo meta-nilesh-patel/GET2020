@@ -54,7 +54,7 @@ public class InventoryRepository
 	{
 		for (Inventory i : inventories) 
 		{
-			if (i.getName().equals(name)) 
+			if (i.getName().equalsIgnoreCase(name)) 
 			{
 				return i;
 			}
@@ -72,7 +72,7 @@ public class InventoryRepository
 		int numberOfInventories = inventories.size();
 		for (int index = 0; index < numberOfInventories; index++) 
 		{
-			if (inventories.get(index).getName().equals(inv.getName())) 
+			if (inventories.get(index).getName().equalsIgnoreCase(inv.getName())) 
 			{
 				return index;
 			}
