@@ -93,9 +93,7 @@ public class InventoryRepository
 			return inv;
 		}
 		Inventory currentInventory = inventories.get(index);
-		int currentQuantity = currentInventory.getQuantity();
-		int newQuantity = inv.getQuantity();
-		currentInventory.setQuantity(currentQuantity + newQuantity);
+		currentInventory.setQuantity(currentInventory.getQuantity() + inv.getQuantity());
 		return currentInventory;
 	}
 	
