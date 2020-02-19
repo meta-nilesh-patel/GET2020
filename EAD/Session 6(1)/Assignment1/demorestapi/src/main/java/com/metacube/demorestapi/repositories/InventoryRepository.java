@@ -102,8 +102,8 @@ public class InventoryRepository
 	 */
 	public List<Inventory> deleteInventories() 
 	{
-		inventories.clear();
-		return inventories;
+		return inventories.clear();
+
 	}
 
 	/**
