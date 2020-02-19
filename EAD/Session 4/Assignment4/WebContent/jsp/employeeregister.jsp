@@ -65,7 +65,7 @@
 				<tr>
 					<td><label><b>Password: </b></label></td>
 					<td><input type="password" name="password" id="password"
-						placeholder="Enter your password" pattern="[0-9]+" minlength="8"
+						placeholder="Enter your password" pattern="[0-9a-zA-Z]+" minlength="8"
 						title="(should be minimum 8 character and should contain number)"
 						required></td>
 				</tr>
@@ -80,8 +80,8 @@
 					<td><label><b>Contact Number: </b></label></td>
 					<td><input type="text" name="contactnumber" id="contactnumber"
 						placeholder="Enter your contact number" pattern="[0-9]+"
-						minlength="8"
-						title="(should be numeric only and minimum 8 numbers" required>
+						minlength="10"
+						title="(should be numeric only and minimum 10 numbers" required>
 					</td>
 				</tr>
 				<tr>
