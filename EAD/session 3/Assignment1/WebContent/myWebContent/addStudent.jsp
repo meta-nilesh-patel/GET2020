@@ -52,7 +52,7 @@
 					<label>	First Name : </label>
 				</td>
 				<td>
-					<label><input type = "text" name = "firstName" required ></label>
+					<label><input type = "text" name = "first_name" required ></label>
 				</td>
 			</tr>
 			<tr>
@@ -60,7 +60,7 @@
 					<label>Last Name :</label>
 				</td>
 				<td>
-					<label><input type = "text" name = "lastName"  required></label>
+					<label><input type = "text" name = "last_name"  required></label>
 				</td>
 			</tr>
 			<tr>
@@ -68,7 +68,7 @@
 					<label>Father Name :</label>
 				</td>
 				<td>
-					<label><input type = "text" name = "fatherName" required ></label>
+					<label><input type = "text" name = "father_name" required ></label>
 				</td>
 			</tr>
 			<tr>
