@@ -25,8 +25,7 @@ public class VehicleDaoImpl implements VehicleDao {
 
 	@Override
 	public Vehicle getVehicle(int vehicleId) {
-		Vehicle vehicle = jdbcTemplate.queryForObject(selectVehicle, new Object[] {vehicleId}, new BeanPropertyRowMapper<>(Vehicle.class));
-		return vehicle;
+		return jdbcTemplate.queryForObject(selectVehicle, new Object[] {vehicleId}, new BeanPropertyRowMapper<>(Vehicle.class));
 	}
 
 	@Override
@@ -49,12 +48,10 @@ public class VehicleDaoImpl implements VehicleDao {
 		insertActor.withTableName("Vehicle").usingColumns("vehicleName", "type", "vehicleNumber", "identification", "empId", "passId");
 		BeanPropertySqlParameterSource param = new BeanPropertySqlParameterSource(vehicle);
 		insertActor.execute(param);
-		vehicleId = jdbcTemplate.queryForObject(lastRecord, new Object[0], Integer.class) - 1;
-		return vehicleId;
+		return jdbcTemplate.queryForObject(lastRecord, new Object[0], Integer.class) - 1;
 	}
 
 	public int getVehicleIdByEmpId(int empId) {
-		int vehicleId = jdbcTemplate.queryForObject(selectVehicleIdByEmpId, new Object[] {empId}, Integer.class);
-		return vehicleId;
+		return jdbcTemplate.queryForObject(selectVehicleIdByEmpId, new Object[] {empId}, Integer.class);
 	}
 }
