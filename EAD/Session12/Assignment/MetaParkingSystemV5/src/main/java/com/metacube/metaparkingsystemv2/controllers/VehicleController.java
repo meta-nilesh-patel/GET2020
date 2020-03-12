@@ -91,7 +91,6 @@ public class VehicleController {
 		} else {
 			System.out.println(vehicle);
 			int empId = (int) session.getAttribute("empId");
-//			Employee employee = employeeService.getEmployeeById(empId);
 			System.out.println(empId);
 			System.out.println(vehicle.getEmployee());
 			Vehicle entireVehicle = vehicleService.getVehicleById(vehicle.getVehicleId());
