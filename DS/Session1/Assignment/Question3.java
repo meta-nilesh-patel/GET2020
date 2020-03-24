@@ -82,7 +82,7 @@ public class Question3 {
                 }
             }
             multivariatePolymomial.add(elementArray);
-
+            expressionIndex += s.length();
         }
         return multivariatePolymomial;
     }
