@@ -78,7 +78,7 @@ public class ExpressionEvaluator {
                 else if ((infixExpression.charAt(index) + "").matches("[+-/*&=!><|]")) {
                     if ((infixExpression.charAt(index + 1) + "").matches("[+-/*&=!><|]")) {
                         String tempOperator = infixExpression.charAt(index) + "" + infixExpression.charAt(index + 1);
-                        while (!operaterStack.isEmpty() && (!(operaterStack.peek() != "(")) && (operatorPrecedence
+                        while (!operaterStack.isEmpty() && (!("(".equals(operatorStack.peek()))) && (operatorPrecedence
                                 .get(tempOperator) < operatorPrecedence.get(operaterStack.peek()))) {
                             values.push(evaluateOperater(values.pop(), values.pop(), operaterStack.pop()));
                         }
@@ -95,7 +95,7 @@ public class ExpressionEvaluator {
                          * which is an operator. Apply operator on top of 'operaterStack' to top two
                          * elements in values stack
                          */
-                        while (!operaterStack.isEmpty() && (!(operaterStack.peek() != "("))
+                        while (!operaterStack.isEmpty() && (!("(".equals(operatorStack.peek())))
                                 && (operatorPrecedence.get(infixExpression.charAt(index) + "") < operatorPrecedence
                                         .get(operaterStack.peek()))) {
                             values.push(evaluateOperater(values.pop(), values.pop(), operaterStack.pop()));
@@ -143,7 +143,7 @@ public class ExpressionEvaluator {
                 return (operandFirst + operandSecond) / 1.0;
             }
             case "-": {
-                return (operandFirst - operandSecond);
+                return (operandSecond - operandFirst);
             }
             case "*": {
                 return (operandFirst * operandSecond);
@@ -164,25 +164,25 @@ public class ExpressionEvaluator {
                 return 1.0;
             }
             case "<": {
-                if (Double.compare(operandFirst, operandSecond) == -1) {
-                    return 1.0;
-                }
-                return 0.0;
-            }
-            case ">": {
                 if (Double.compare(operandFirst, operandSecond) == 1) {
                     return 1.0;
                 }
                 return 0.0;
             }
+            case ">": {
+                if (Double.compare(operandFirst, operandSecond) == -1) {
+                    return 1.0;
+                }
+                return 0.0;
+            }
             case "<=": {
-                if (Double.compare(operandFirst, operandSecond) != 1) {
+                if (Double.compare(operandFirst, operandSecond) != -1) {
                     return 1.0;
                 }
                 return 0.0;
             }
             case ">=": {
-                if (Double.compare(operandFirst, operandSecond) != -1) {
+                if (Double.compare(operandFirst, operandSecond) != 1) {
                     return 1.0;
                 }
                 return 0.0;
